@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiCrop - Recommendation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="page">
+        <div class="card result-card">
+            <div class="brand brand-sm">
+                <svg class="brand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21V11" stroke="#3F6B32" stroke-width="1.6" stroke-linecap="round"/>
+                    <path d="M12 13C12 13 6 12 6 6C12 6 12.5 10 12 13Z" fill="#3F6B32"/>
+                    <path d="M12 11C12 11 18 10 18 4C12 4 11.5 8 12 11Z" fill="#5C8A47"/>
+                </svg>
+                <span>OptiCrop</span>
+            </div>
+
+            <p class="eyebrow">Recommended crop</p>
+            <h2 class="crop-name">{{ crop | capitalize }}</h2>
+
+            <div class="meter">
+                <div class="meter-track">
+                    <div class="meter-fill" style="width: {{ confidence }}%"></div>
+                </div>
+                <div class="meter-label">
+                    <span>Confidence</span>
+                    <span class="meter-value">{{ confidence }}%</span>
+                </div>
+            </div>
+
+            <a href="/" class="back-link">← Try another combination</a>
+        </div>
+    </div>
+</body>
+</html>

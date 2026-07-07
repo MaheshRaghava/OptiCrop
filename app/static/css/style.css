@@ -1,0 +1,254 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --paper: #EFEDE1;
+    --card: #FCFBF6;
+    --ink: #2A2118;
+    --ink-muted: #6B6353;
+    --soil: #3F6B32;
+    --soil-light: #E7EEE2;
+    --climate: #C97A2B;
+    --climate-light: #F7EBDC;
+    --border: #E1DDCC;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--paper);
+    background-image: repeating-linear-gradient(
+        115deg,
+        rgba(63, 107, 50, 0.05) 0px,
+        rgba(63, 107, 50, 0.05) 1.5px,
+        transparent 1.5px,
+        transparent 42px
+    );
+    color: var(--ink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px 20px;
+    min-height: 100vh;
+}
+
+.page {
+    width: 100%;
+    max-width: 480px;
+}
+
+.card {
+    background: var(--card);
+    padding: 36px 32px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 32px rgba(42, 33, 24, 0.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.brand-icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+}
+
+.brand h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--soil);
+}
+
+.brand-sm span {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--soil);
+}
+
+.subtitle {
+    color: var(--ink-muted);
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+fieldset {
+    border: none;
+    margin-bottom: 24px;
+}
+
+legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+    padding: 0;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dot-soil { background: var(--soil); }
+.dot-climate { background: var(--climate); }
+
+.field {
+    margin-bottom: 14px;
+}
+
+label {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--ink);
+}
+
+.unit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-muted);
+    background: var(--border);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color 0.15s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--soil);
+    box-shadow: 0 0 0 3px var(--soil-light);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--soil);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #345A2A;
+    transform: translateY(-1px);
+}
+
+.error {
+    color: #A23B1E;
+    background: #FBEAE3;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+/* Result page */
+.result-card {
+    text-align: center;
+}
+
+.brand-sm {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+}
+
+.crop-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--soil);
+    margin-bottom: 28px;
+}
+
+.meter {
+    margin-bottom: 28px;
+    text-align: left;
+}
+
+.meter-track {
+    width: 100%;
+    height: 10px;
+    background: var(--soil-light);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #5C8A47, var(--soil));
+    border-radius: 6px;
+    transition: width 0.6s ease;
+}
+
+.meter-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--ink-muted);
+}
+
+.meter-value {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--soil);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 400px) {
+    .card { padding: 28px 22px; }
+    .crop-name { font-size: 32px; }
+}
