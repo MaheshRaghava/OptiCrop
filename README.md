@@ -171,6 +171,10 @@ As additional analysis, unsupervised K-Means clustering was also explored to see
 | Nerella Vivek | Member |
 | Padamata Gowtham | Member |
 
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
 ## Skills Applied
 
 NumPy, Pandas, Scikit-learn, Matplotlib, SciPy, Seaborn, Flask, Machine Learning
