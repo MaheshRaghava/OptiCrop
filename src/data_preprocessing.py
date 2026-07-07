@@ -10,6 +10,20 @@ def load_data(filepath):
     return pd.read_csv(filepath)
 
 
+def handle_missing_values(df):
+    """
+    Defensive check for missing values. This dataset has none (verified in Phase 1),
+    but this step is included to demonstrate proper preprocessing practice and to
+    protect against corrupted data in future dataset updates.
+    """
+    if df.isnull().sum().sum() > 0:
+        df = df.fillna(df.mean(numeric_only=True))
+        print("Missing values found and filled with column means.")
+    else:
+        print("No missing values found.")
+    return df
+
+
 def encode_labels(df, label_col='label'):
     """Encode crop labels into integers. Returns encoded series and fitted encoder."""
     encoder = LabelEncoder()
