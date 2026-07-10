@@ -21,6 +21,7 @@
                 <h1>OptiCrop</h1>
             </div>
             <p class="subtitle">Enter your field readings to get a crop recommendation</p>
+            <p class="disclaimer">This model recommends from a fixed database of 22 crops and may not cover every possible crop for your region. Example values are pre-filled below — replace them with your own readings.</p>
 
             {% if error %}
             <p class="error">{{ error }}</p>
@@ -32,15 +33,15 @@
 
                     <div class="field">
                         <label for="nitrogen">Nitrogen <span class="unit">N</span></label>
-                        <input type="number" step="any" id="nitrogen" name="nitrogen" required>
+                        <input type="number" step="any" id="nitrogen" name="nitrogen" value="80" required>
                     </div>
                     <div class="field">
                         <label for="phosphorous">Phosphorous <span class="unit">P</span></label>
-                        <input type="number" step="any" id="phosphorous" name="phosphorous" required>
+                        <input type="number" step="any" id="phosphorous" name="phosphorous" value="47" required>
                     </div>
                     <div class="field">
                         <label for="potassium">Potassium <span class="unit">K</span></label>
-                        <input type="number" step="any" id="potassium" name="potassium" required>
+                        <input type="number" step="any" id="potassium" name="potassium" value="40" required>
                     </div>
                 </fieldset>
 
@@ -49,19 +50,19 @@
 
                     <div class="field">
                         <label for="temperature">Temperature <span class="unit">°C</span></label>
-                        <input type="number" step="any" id="temperature" name="temperature" required>
+                        <input type="number" step="any" id="temperature" name="temperature" value="23.5" required>
                     </div>
                     <div class="field">
                         <label for="humidity">Humidity <span class="unit">%</span></label>
-                        <input type="number" step="any" id="humidity" name="humidity" required>
+                        <input type="number" step="any" id="humidity" name="humidity" value="82" required>
                     </div>
                     <div class="field">
                         <label for="ph">Soil pH <span class="unit">pH</span></label>
-                        <input type="number" step="any" id="ph" name="ph" required>
+                        <input type="number" step="any" id="ph" name="ph" value="6.4" required>
                     </div>
                     <div class="field">
                         <label for="rainfall">Rainfall <span class="unit">mm</span></label>
-                        <input type="number" step="any" id="rainfall" name="rainfall" required>
+                        <input type="number" step="any" id="rainfall" name="rainfall" value="230" required>
                     </div>
                 </fieldset>
 
