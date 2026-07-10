@@ -252,6 +252,7 @@ button:hover {
     .card { padding: 28px 22px; }
     .crop-name { font-size: 32px; }
 }
+
 .low-confidence-warning {
     display: flex;
     align-items: flex-start;
@@ -316,6 +317,7 @@ button:hover {
     color: var(--ink-muted);
     text-align: right;
 }
+
 .disclaimer {
     font-size: 12px;
     color: var(--ink-muted);
@@ -324,4 +326,72 @@ button:hover {
     border-radius: 6px;
     margin-bottom: 24px;
     line-height: 1.4;
+}
+
+/* Language switcher */
+.lang-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--soil);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    width: auto;
+}
+
+.lang-btn:hover {
+    background-color: #345A2A;
+}
+
+.lang-menu {
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(42, 33, 24, 0.12);
+    min-width: 130px;
+    display: none;
+    overflow: hidden;
+}
+
+.lang-menu.open {
+    display: block;
+}
+
+.lang-menu li {
+    padding: 10px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--ink);
+}
+
+.lang-menu li:hover {
+    background: var(--soil-light);
+}
+
+.lang-menu li.active {
+    color: var(--soil);
+    font-weight: 600;
+}
+
+@media (max-width: 400px) {
+    .lang-switcher {
+        top: 12px;
+        right: 12px;
+    }
 }
